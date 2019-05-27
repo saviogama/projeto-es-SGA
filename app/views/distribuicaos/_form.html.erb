@@ -1,0 +1,22 @@
+<%= form_with(model: distribuicao, local: true) do |form| %>
+  <% if distribuicao.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(distribuicao.errors.count, "error") %> prohibited this distribuicao from being saved:</h2>
+
+      <ul>
+      <% distribuicao.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :obs %>
+    <%= form.text_area :obs, id: :distribuicao_obs %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

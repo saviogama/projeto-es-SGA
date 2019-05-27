@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data val:</strong>
+  <%= @item.data_val %>
+</p>
+
+<p>
+  <strong>N lote:</strong>
+  <%= @item.n_lote %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @item.desc %>
+</p>
+
+<p>
+  <strong>Unidade:</strong>
+  <%= @item.unidade %>
+</p>
+
+<p>
+  <strong>Gramatura:</strong>
+  <%= @item.gramatura %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

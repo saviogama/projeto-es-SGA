@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data: 2019-05-27
+  n_contrato: MyString
+  n_proc_lic: MyString
+  desc: MyText
+
+two:
+  data: 2019-05-27
+  n_contrato: MyString
+  n_proc_lic: MyString
+  desc: MyText

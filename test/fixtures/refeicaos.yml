@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  peso_liquido: 9.99
+  desc: MyText
+
+two:
+  nome: MyString
+  peso_liquido: 9.99
+  desc: MyText
