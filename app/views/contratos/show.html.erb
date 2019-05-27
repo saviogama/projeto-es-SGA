@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Data:</strong>
+  <%= @contrato.data %>
+</p>
+
+<p>
+  <strong>N contrato:</strong>
+  <%= @contrato.n_contrato %>
+</p>
+
+<p>
+  <strong>N proc lic:</strong>
+  <%= @contrato.n_proc_lic %>
+</p>
+
+<p>
+  <strong>Desc:</strong>
+  <%= @contrato.desc %>
+</p>
+
+<%= link_to 'Edit', edit_contrato_path(@contrato) %> |
+<%= link_to 'Back', contratos_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  data_val: 2019-05-27
+  n_lote: MyString
+  desc: MyText
+  unidade: 1
+  gramatura: MyString
+
+two:
+  data_val: 2019-05-27
+  n_lote: MyString
+  desc: MyText
+  unidade: 1
+  gramatura: MyString

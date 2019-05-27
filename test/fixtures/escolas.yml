@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  rota: MyString
+  endereco: MyText
+  mod_ensino: MyString
+  periodo_atend: MyString
+  qtd_alunos: 1
+
+two:
+  nome: MyString
+  rota: MyString
+  endereco: MyText
+  mod_ensino: MyString
+  periodo_atend: MyString
+  qtd_alunos: 1
