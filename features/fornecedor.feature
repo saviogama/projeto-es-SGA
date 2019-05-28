@@ -1,36 +1,36 @@
 Feature: Fornecedor
-	As a usuario do sistema
+	As a administrador do sistema
 	I want to adicionar, remover, ver e editar fornecedores
-	So that eu nao tenho que faer isso manualmente
+	So that eu nao tenha que fazer isso manualmente
 
+Scenario: Cadastro de fornecedor com sucesso
+	Given Eu estou na pagina de cadastro de fornecedores
+	When Eu preencho o campo de nome com 'SA Alimentos' e o campo cnpj com '23.123.123/0002-55'
+	And Eu clico no botao de cadastro
+	Then Eu vejo uma mensagem informando que o fornecedor 'SA Alimentos' foi salvo com sucesso
 
-Scenario: novo cadastro de fornecedor com sucesso
-	Given Eu estou na pagina de novo cadastro
-	When Eu preencho o campo de novo com 'SA Alimentos' e o campo cnpj com '23.123.123/0002-55' e o campo email com 'sa@alimentos'
-	And Eu clico no botao de salvar cadastro
-	Then Eu vejo uma mensagem que o novo forncedor com o nome de 'SA Alimentos' foi salvo com sucesso
+Scenario: Cadastro de fornecedor com nome em branco
+	Given Eu estou na pagina de cadastro de fornecedores
+	When Eu preencho o campo de nome com '' e o campo cnpj com '23.123.000/0002-00'
+	And Eu clico no botao de cadastro
+	Then Eu vejo uma mensagem de erro informando que o nome nao pode estar em branco
 
-Scenario: novo cadastro de forncedor com email invalido
-	Given Eu estou na pagina de novo cadastro 
-	When Eu preencho o campo de nome com 'GA Verduras' e o campo cnpj com '23.123.000/0002-00'
-	And Eu clico no botao de salvar cadastro
-	Then Eu vejo uma mensagem de erro de email invalido
+Scenario: Cadastro de fornecedor com cnpj em branco
+ 	Given Eu estou na pagina de cadastro de fornecedores
+ 	When Eu preencho o campo de nome com 'SA Alimentos' e o campo cnpj com ''
+ 	And Eu clico no boao de cadastro
+ 	Then Eu vejo uma mensagem de erro informando que o cnpj nao pode estar em branco
 
-Scenario: novo cadastro de fornecedor com cnpj ja existente
+Scenario: Editar cadastro de fornecedor com sucesso
+ 	Given Eu estou na pagina de fornecedores
+	And Eu vejo o fornecedor 'SA Alimentos' com o cnpj '23.123.000/0002-00' e clico em editar
+ 	When Eu preencho o campo de nome com 'SA Alimentos LTD' e o campo cnpj com '23.123.123/000-55'
+ 	And Eu clico no botao de editar
+ 	Then Eu vejo uma mensagem informando que o fornecedor 'SA Alimentos LTD' foi salvo com sucesso
 
- 	Given Eu estou na pagina de novo cadastro 
- 	When Eu preencho o campo de nome com 'JO Frios' e o campo cnpj com '23.123.123/0002-55' e o campo email com 'jo@frios'
- 	And Eu clico no boao de salvar cadastro
- 	Then Eu vejo uma mensagem de erro de cnpj ja existente
+Scenario: Visualizar cadastro de fornecedor
+ 	Given Eu estou na pagina de cadastro de fornecedores
+	When Eu vejo o fornecedor 'SA Alimentos' com o cnpj '23.123.000/0002-00'
+ 	And Eu clico em ver
+ 	Then Eu vejo os detalhes do nome e do cnpj do fornecedor 'SA Alimentos'
 
- Scenario:novo cadastro de fornecedor com nome vazio
- 	Given Eu preencho na pagina de nvo cadastro
- 	When Eu preencho o campo de nome com '' e o campo cnpj com '23.123.123/000-55' e o campo email com 'ga@verduras'
- 	And Eu clico no botao de salvar cadastro
- 	Then Eu vejo uma mensagem de erro de nome vazio
-
-Scenario: novo cadastro de fornecedor com cnpj invalido
-	Given Eu estou na pagina de novo cadastro
-	When Eu preencho o campo de nome com 'AD Carnes' e o campo cnpj com '23.123.123/0002-df' e o campo email com 'ad@carnes'
-	And Eu clico no botao de salvar cadastro
-	Then Eu vejo uma mensagem de erro de cnpj invalido
