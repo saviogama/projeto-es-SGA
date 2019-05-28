@@ -18,7 +18,7 @@ Scenario: Cadastro de fornecedor com nome em branco
 Scenario: Cadastro de fornecedor com cnpj em branco
  	Given Eu estou na pagina de cadastro de fornecedores
  	When Eu preencho o campo de nome com 'SA Alimentos' e o campo cnpj com ''
- 	And Eu clico no boao de cadastro
+ 	And Eu clico no botao de cadastro
  	Then Eu vejo uma mensagem de erro informando que o cnpj nao pode estar em branco
 
 Scenario: Editar cadastro de fornecedor com sucesso

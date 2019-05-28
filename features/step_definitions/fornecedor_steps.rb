@@ -18,10 +18,6 @@ When ("Eu vejo o fornecedor {string} com o cnpj {string}") do |nome, cnpj|
 	expect(page).to have_content(cnpj)
 end
 
-And ("Eu clico no botao de cadastro") do
-	click_button 'submit'	
-end
-
 And ("Eu vejo o fornecedor {string} com o cnpj {string} e clico em editar") do |nome, cnpj|
 	click_link 'edit'	
 end
