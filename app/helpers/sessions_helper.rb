@@ -7,7 +7,7 @@ module SessionsHelper
             end
             def block_access
                         if current_administrador.present?
-                                   redirect_to administrador_path
+                                   redirect_to administrador_path(current_administrador)
                         end
             end
 	    def logged_in?

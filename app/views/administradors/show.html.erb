@@ -1,8 +1,24 @@
 <html>
 	<body>
-		<h3>Perfil de <%= @administrador.nome %> </h3>
-		<%= @administrador.email %>
+		<div align="left">
+		<ul><ul><h4>Perfil de <%= @administrador.nome %> - <%= @administrador.email %> </h4></ul></ul>
+		</div>
   		<% if current_administrador == @administrador %>
             	<%end%>
 	</body>
+	<br> 
+	</br> 
+	
+			<p>
+			<h2> <%= link_to "Fornecedores", fornecedors_path %> </h2>
+			</p>
+			<p>
+			<h2> <%= link_to "Estoque" %> </h2>
+			</p>
+			<p>
+			<h2> <%= link_to "Escolas" %> </h2>
+			</p>
+			<p>
+			<h2> <%= link_to "Etc" %> </h2>
+			</p>
 </html>
