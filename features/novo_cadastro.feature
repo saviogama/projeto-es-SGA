@@ -1,38 +1,37 @@
-Feature:Usuario
-	As a [usuario do sistema]
-	I want to [adicionar, remover, ver e editar usuarios]
-	so that [eu nao tenho que fazer isso manualmente]
+Feature: Usuario
+	As a usuario do sistema
+	I want to adicionar, remover, ver e editar usuarios
+	so that eu nao tenho que fazer isso manualmente
 
+Scenario: Novo cadastro com sucesso
+	Given Eu estou na pagina de cadastro
+	When Eu preencho o campo de nome com 'Adilson Jose', o campo email com 'adilson@jose.com', o campo senha com '123789' e confirmo a senha com '123789'
+	And Eu clico no botao de cadastro
+	Then Eu vejo que o cadastro com o nome 'Adilson Jose' foi salvo com sucesso
 
-Scenario:novo cadastro com sucesso
-	Given Eu estou na pagina de novo cadastro
-	When Eu preencho o campo de nome 'Adilson Jose' o campo email com 'adilson@jose' e o campo senha '123789'
-	And Eu clico no botao de salvar cadastro
-	Then Eu vejo uma mensagem que o novo cadastro com o nome 'Adilson Jose' foi salvo com sucesso
+Scenario: Cadastro incorreto nome em branco
+	Given Eu estou na pagina de cadastro
+	When Eu preencho o campo de nome com '', o campo email com 'adilson@jose.com', o campo senha com '123789' e confirmo a senha com '123789'
+	And Eu clico no botao de cadastro
+	Then Eu vejo uma mensagem de erro informando que o nome nao pode estar em branco
 
+Scenario: Cadastro incorreto email em branco
+	Given Eu estou na pagina de cadastro
+	When Eu preencho o campo de nome com 'Adilson Jose', o campo email com '', o campo senha com '123789' e confirmo a senha com '123789'
+	And Eu clico no botao de cadastro
+	Then Eu vejo uma mensagem de erro informando que o email nao pode estar em branco
 
-Scenario:novo cadastro incorreto senha vazia
-	Given Eu estou na pagina de novo cadastro
-	When Eu preencho o campo de nome com 'Adilson Jose' o campo email com 'adislon@jose' e o campo senha ''
-	And Eu clico no botao de salvar cadastro
-	Then Eu vejo uma mensagem de erro de senha vazia
+Scenario: Cadastro incorreto senha em branco
+	Given Eu estou na pagina de cadastro
+	When Eu preencho o campo de nome com 'Adilson Jose', o campo email com 'adilson@jose.com', o campo senha com '' e confirmo a senha com ''
+	And Eu clico no botao de cadastro
+	Then Eu vejo uma mensagem de erro informando que a senha nao pode estar em branco
 
-Scenario: login incorreto
-	Given Eu estou na pagina de login
-	When Eu preencho o campo email com 'adilsonjose' e o campo senha com '123789'
-	And Eu clico no botao de logar
-	Then Eu vejo uma mensagem de erro de email incorreto
+Scenario: Cadastro incorreto senhas nao correspondem
+	Given Eu estou na pagina de cadastro
+	When Eu preencho o campo de nome com 'Adilson Jose', o campo email com 'adilson@jose.com', o campo senha com '123789' e confirmo a senha com ''
+	And Eu clico no botao de cadastro
+	Then Eu vejo uma mensagem de erro informando que as senhas nao correspondem
 
-Scenario:login correto
-	Given Eu estou na pagina de login
-	When Eu preencho o caompo email com 'adilson@jose' e o campo senha com '123789'
-	And Eu clico no botao de logar
-	Then Eu vejo que entrei no login de email 'adilson@jose' com sucesso
-
-Scenario:login incorreto
-	Given Eu estou na pagina de login
-	When Eu preencho o campo email com 'adilson@jose' e o campo senha '123789'
-	And Eu clico no botao jogar
-	Then Eu vejo uma mensagem de erro de email não cadastrado
 
 
