@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :administradors
+  get 'sign_in' => 'sessions#new'
+  post 'sign_in' => 'sessions#create'
+  delete 'sign_out' => 'sessions#destroy'
+
   resources :escolas
   resources :distribuicaos
   resources :cardapios
@@ -7,6 +13,7 @@ Rails.application.routes.draw do
   resources :estoques
   resources :fornecedors
   resources :contratos
-  resources :administradors
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  root 'sessions#new'
+
 end

@@ -42,6 +42,10 @@ GEM
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
     backports (3.15.0)
+    bcrypt (3.1.12)
+    bcrypt (3.1.12-java)
+    bcrypt (3.1.12-x64-mingw32)
+    bcrypt (3.1.12-x86-mingw32)
     bindex (0.7.0)
     builder (3.2.3)
     byebug (11.0.1)
@@ -248,6 +252,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  bcrypt
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)

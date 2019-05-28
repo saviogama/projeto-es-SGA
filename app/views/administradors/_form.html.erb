@@ -1,32 +1,33 @@
-<%= form_with(model: administrador, local: true) do |form| %>
-  <% if administrador.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(administrador.errors.count, "error") %> prohibited this administrador from being saved:</h2>
-
-      <ul>
-      <% administrador.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :nome %>
-    <%= form.text_field :nome, id: :administrador_nome %>
-  </div>
-
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :administrador_email %>
-  </div>
-
-  <div class="field">
-    <%= form.label :senha %>
-    <%= form.text_field :senha, id: :administrador_senha %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<%= form_for @administrador do |f| %>
+            <% if @administrador.errors.any? %>
+            <div id="error_explanation">
+                        <div class="alert-error">
+                                   O formulário contém <%= pluralize(@administrador.errors.count, "erro") %>.
+                        </div>
+                        <ul>
+                                   <% @administrador.errors.full_messages.each do |msg| %>
+                                   <li><%= msg %></li>
+                                   <% end %>
+                        </ul>
+            </div>
+<% end %>
+            <div class="field">
+                        <%= f.label :nome %>
+                        <%= f.text_field :nome %>
+            </div>
+            <div class="field">
+                        <%= f.label :email %>
+                        <%= f.email_field :email %>
+            </div>
+            <div class="field">
+                        <%= f.label :password %>
+                        <%= f.password_field :password %>
+            </div>
+            <div class="field">
+                        <%= f.label :password_confirmation %>
+                        <%= f.password_field :password_confirmation %>
+            </div>
+            <div class="actions">
+                        <%= f.submit "Cadastrar"%> <%= link_to "Voltar", root_path %>
+            </div>
 <% end %>
