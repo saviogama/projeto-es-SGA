@@ -5,13 +5,14 @@
     <nav>
       <ul>
         <% if logged_in? %>  
-          <li>
             <ul>
+	      <div align="left">
               <li><%= link_to "Inicio", current_administrador %></li>
               <li><%= link_to "Editar Perfil", edit_administrador_path(current_administrador) %></li>
               <li>
                 <%= link_to "Sair", sign_out_path, method: "delete" %>
               </li>
+	      </div>
             </ul>
         <% else %>
          
