@@ -11,7 +11,7 @@ When ("Eu preencho o campo de nome com {string}, o campo email com {string}, o c
 end
 
 And ("Eu clico no botao de cadastro") do
-	click_button 'submit'	
+	click_button 'Cadastrar'	
 end
 
 Then ("Eu vejo que o cadastro com o nome {string} foi salvo com sucesso") do |nome|
