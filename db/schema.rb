@@ -20,37 +20,11 @@ ActiveRecord::Schema.define(version: 20190528065030) do
     t.string "password_digest"
   end
 
-  create_table "cardapios", force: :cascade do |t|
-    t.string "nome"
-    t.date "data_inicio"
-    t.date "data_fim"
-    t.string "mod_ensino"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "contratos", force: :cascade do |t|
     t.date "data"
     t.string "n_contrato"
     t.string "n_proc_lic"
     t.text "desc"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "distribuicaos", force: :cascade do |t|
-    t.text "obs"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "escolas", force: :cascade do |t|
-    t.string "nome"
-    t.string "rota"
-    t.text "endereco"
-    t.string "mod_ensino"
-    t.string "periodo_atend"
-    t.integer "qtd_alunos"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -74,14 +48,6 @@ ActiveRecord::Schema.define(version: 20190528065030) do
     t.text "desc"
     t.integer "unidade"
     t.string "gramatura"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "refeicaos", force: :cascade do |t|
-    t.string "nome"
-    t.decimal "peso_liquido"
-    t.text "desc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

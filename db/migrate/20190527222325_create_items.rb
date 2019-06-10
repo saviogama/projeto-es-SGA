@@ -7,6 +7,9 @@ class CreateItems < ActiveRecord::Migration[5.1]
       t.integer :unidade
       t.string :gramatura
 
+      t.references :estoque
+      t.references :contrato
+
       t.timestamps
     end
   end
