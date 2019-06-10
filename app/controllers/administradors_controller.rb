@@ -1,18 +1,23 @@
 class AdministradorsController < ApplicationController
-	before_action :authorize, except: [:new, :create]
+  
+  before_action :authorize, except: [:new, :create]
+
   def new
-            @administrador = Administrador.new
+     @administrador = Administrador.new
   end
+
   def create
-            @administrador = Administrador.new(administrador_params)
-            if @administrador.save
-                        redirect_to @administrador, notice: "Usuário foi criado com sucesso!"
-			sign_in(@administrador)
-            else 
-		render action: :new
-            end
+     @administrador = Administrador.new(administrador_params)
+     if @administrador.save
+       redirect_to @administrador, notice: "Usuário foi criado com sucesso!"
+       sign_in(@administrador)
+     else 
+       render action: :new
+     end
   end
-	before_action :correct_administrador?, only: [:edit, :update, :destroy]
+
+  before_action :correct_administrador?, only: [:edit, :update, :destroy]
+
   def edit
     @administrador = Administrador.find(params[:id]) 
   end
@@ -32,14 +37,17 @@ class AdministradorsController < ApplicationController
     sign_out
     redirect_to root_path
   end
+
   def index
     @administrador = Administrador.all
   end
-   def show
+
+  def show
     @administrador = Administrador.find(params[:id])
-   end
+  end
+
   private
   def administrador_params
-            params.require(:administrador).permit(:nome, :email, :password, :password_confirmation)
+    params.require(:administrador).permit(:nome, :email, :password, :password_confirmation)
   end
 end

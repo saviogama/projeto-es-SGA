@@ -4,14 +4,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
   def authorize
-      unless logged_in?
-        redirect_to root_url
-      end
+    unless logged_in?
+      redirect_to root_url
+    end
   end
+
   def correct_administrador?
-            @administrador = Administrador.find(params[:id])
-                        unless current_administrador == @administrador
-                                   redirect_to administradors_path
-                        end
+    @administrador = Administrador.find(params[:id])
+    unless current_administrador == @administrador
+      redirect_to administradors_path
+    end
   end
 end
