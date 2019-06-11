@@ -5,8 +5,9 @@ Rails.application.routes.draw do
   post 'sign_in' => 'sessions#create'
   delete 'sign_out' => 'sessions#destroy'
 
-  resources :items
-  resources :estoques
+  resources :estoques do
+    resources :items
+  end
   resources :fornecedors
   resources :contratos
 
