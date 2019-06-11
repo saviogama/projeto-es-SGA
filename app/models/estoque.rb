@@ -1,4 +1,4 @@
 class Estoque < ApplicationRecord
   validates :nome, presence: true, length: {minimum: 6}
-  has_many :items
+  has_many :items, dependent: :destroy
 end

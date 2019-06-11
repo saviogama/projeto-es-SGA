@@ -10,6 +10,7 @@ class EstoquesController < ApplicationController
   # GET /estoques/1
   # GET /estoques/1.json
   def show
+    @estoque = Estoque.find(params[:id])
   end
 
   # GET /estoques/new

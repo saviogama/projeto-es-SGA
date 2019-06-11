@@ -1,15 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  data_val: 2019-05-27
+  nome: MyString
+  data_val: MyString
   n_lote: MyString
-  desc: MyText
+  desc: MyString
   unidade: 1
-  gramatura: MyString
+  estoque: one
 
 two:
-  data_val: 2019-05-27
+  nome: MyString
+  data_val: MyString
   n_lote: MyString
-  desc: MyText
+  desc: MyString
   unidade: 1
-  gramatura: MyString
+  estoque: two
