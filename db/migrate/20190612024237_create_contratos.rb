@@ -1,10 +1,11 @@
 class CreateContratos < ActiveRecord::Migration[5.1]
   def change
     create_table :contratos do |t|
-      t.date :data
       t.string :n_contrato
-      t.string :n_proc_lic
-      t.text :desc
+      t.string :data
+      t.string :n_lic
+      t.string :desc
+      t.references :fornecedor, foreign_key: true
 
       t.timestamps
     end

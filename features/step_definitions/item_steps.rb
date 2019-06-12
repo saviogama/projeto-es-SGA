@@ -5,7 +5,7 @@ Given ("Eu estou na pagina do estoque {string}") do |nome|
 
 	visit '/estoques'
 	expect(page).to have_content(nome)
-	click_link 'Ver'
+	click_link "s-#{nome}"
 end
 
 When ("Eu preencho o campo de nome com {string}, a data de validade com {string}, o numero do lote com {string}, a descricao com {string} e a unidade com {string}") do |nome, validade, lote, desc, unidade|

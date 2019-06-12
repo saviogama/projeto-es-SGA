@@ -1,14 +1,69 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Nome:</strong>
+  <h1>
   <%= @fornecedor.nome %>
 </p>
 
 <p>
+  <h1>
   <strong>Cnpj:</strong>
   <%= @fornecedor.cnpj %>
 </p>
+
+<h3>Contratos:</h3>
+<% @fornecedor.contratos.each do |contrato| %>
+  <table>
+    <tr>
+      <th><strong>Numero do contrato:</strong></th>
+      <th><%= contrato.n_contrato %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Data:</strong></th>
+      <th><%= contrato.data %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Numero do processo:</strong></th>
+      <th><%= contrato.n_lic %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Descricao:</strong></th>
+      <th><%= contrato.desc %></th>
+    </tr>
+
+<%= link_to 'Excluir Contrato' %>
+<%end%>
+
+<h3>Novo contrato:</h3>
+<%= form_with(model: [ @fornecedor, @fornecedor.contratos.build ], local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :n_contrato %>
+    <%= form.text_field :n_contrato %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data %>
+    <%= form.text_field :data %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_proc_lic %>
+    <%= form.text_field :n_lic %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_field :desc %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Editar', edit_fornecedor_path(@fornecedor) %> |
 <%= link_to 'Voltar', fornecedors_path %>

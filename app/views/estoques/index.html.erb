@@ -14,8 +14,8 @@
     <% @estoques.each do |estoque| %>
       <tr>
         <td><%= estoque.nome %></td>
-        <td><%= link_to 'Ver', estoque %></td>
-        <td><%= link_to 'Editar', edit_estoque_path(estoque) %></td>
+        <td><%= link_to 'Ver', estoque, id:"s-#{estoque.nome}" %></td>
+        <td><%= link_to 'Editar', edit_estoque_path(estoque), id:"e-#{estoque.nome}" %></td>
         <td><%= link_to 'Excluir', estoque, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

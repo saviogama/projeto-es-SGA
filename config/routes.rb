@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   resources :estoques do
     resources :items
   end
-  resources :fornecedors
-  resources :contratos
+  resources :fornecedors do
+    resources :contratos
+  end
 
   root 'sessions#new'
 

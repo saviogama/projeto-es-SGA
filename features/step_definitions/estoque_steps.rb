@@ -27,7 +27,7 @@ And ("Eu vejo o estoque com nome {string} e clico em editar") do |nome|
 
 	visit '/estoques'
 	expect(page).to have_content(nome)
-	click_link 'Editar'
+	click_link "e-#{nome}"
 end
 
 Then ("Eu vejo uma mensagem de erro informando que o nome do estoque nao pode estar em branco") do
