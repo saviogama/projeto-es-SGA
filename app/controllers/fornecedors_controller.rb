@@ -10,6 +10,7 @@ class FornecedorsController < ApplicationController
   # GET /fornecedors/1
   # GET /fornecedors/1.json
   def show
+    @fornecedor = Fornecedor.find(params[:id])
   end
 
   # GET /fornecedors/new

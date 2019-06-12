@@ -1,3 +1,3 @@
 class Contrato < ApplicationRecord
-	has_one :fornecedor
+  belongs_to :fornecedor
 end

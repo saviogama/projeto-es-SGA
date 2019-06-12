@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190611122251) do
+ActiveRecord::Schema.define(version: 20190612024237) do
 
   create_table "administradors", force: :cascade do |t|
     t.string "nome"
@@ -21,12 +21,14 @@ ActiveRecord::Schema.define(version: 20190611122251) do
   end
 
   create_table "contratos", force: :cascade do |t|
-    t.date "data"
     t.string "n_contrato"
-    t.string "n_proc_lic"
-    t.text "desc"
+    t.string "data"
+    t.string "n_lic"
+    t.string "desc"
+    t.integer "fornecedor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["fornecedor_id"], name: "index_contratos_on_fornecedor_id"
   end
 
   create_table "estoques", force: :cascade do |t|
