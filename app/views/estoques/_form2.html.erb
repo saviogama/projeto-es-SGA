@@ -1,0 +1,70 @@
+<p>
+  <h1>
+  <%= @estoque.nome %>
+  </h1>
+</p>
+
+<h3>Itens:</h3>
+<% @estoque.items.each do |item| %>
+  <table>
+    <tr>
+      <th><strong>Nome:</strong></th>
+      <th><%= item.nome %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Data de validade:</strong></th>
+      <th><%= item.data_val %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Numero do lote:</strong></th>
+      <th><%= item.n_lote %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Descricao:</strong></th>
+      <th><%= item.desc %></th>
+    </tr>
+
+    <tr>
+      <th><strong>Unidade:</strong></th>
+      <th><%= item.unidade %></th>
+    </tr>
+  </table>
+
+<%= link_to 'Excluir Item' %>
+<%end%>
+
+<h3>Adicionar Item:</h3>
+<%= form_with(model: [ @estoque, @estoque.items.build ], local: true) do |form| %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :data_val %>
+    <%= form.text_field :data_val %>
+  </div>
+
+  <div class="field">
+    <%= form.label :n_lote %>
+    <%= form.text_field :n_lote %>
+  </div>
+
+  <div class="field">
+    <%= form.label :desc %>
+    <%= form.text_field :desc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :unidade %>
+    <%= form.number_field :unidade %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
