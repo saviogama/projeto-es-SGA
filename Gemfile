@@ -8,8 +8,6 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '= 5.1.6'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.13'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -48,6 +46,12 @@ group :development, :test do
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions
   gem 'database_cleaner' # to clear Cucumber's test database between runs
   gem 'launchy'          # a useful debugging aid for user stories
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.3.13'
+end
+
+group :production do
+  gem 'pg', '~> 1.1', '>= 1.1.4'
 end
 
 group :development do
